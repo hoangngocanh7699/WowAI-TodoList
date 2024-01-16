@@ -1,0 +1,42 @@
+table.ui.table.todos-list {
+  width: 1440px;
+  margin: auto;
+  margin-top: 40px;
+
+  td {
+    width: 300px;
+    border-bottom: 1px solid;
+  }
+}
+
+.ui.table tr:first-child td {
+  border-top: 1px solid !important;
+}
+
+.todo-status {
+  width: 150px;
+}
+
+.button.ui.button.btn-delete {
+  padding-left: 15px;
+	background-color: red;
+	color: white;
+}
+
+form.ui.form {
+  width: 500px;
+  margin: auto;
+  border: 2px solid lightblue;
+
+  label {
+    height: 30px;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+}
+
+.tasks {
+  height: 300px;
+  overflow: auto;
+}
