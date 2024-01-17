@@ -68,19 +68,7 @@ const TodoList = () => {
     setTaskIdCounter(taskIdCounter + 1)
     localStorage.setItem("taskIdCounter", (taskIdCounter + 1).toString())
   }
-  
-  const handleEditTask = (taskId, updatedTask) => {
-    setTasks( tasks.map((task) => task.id === taskId ? { ...task, ...updatedTask } : task))
-  }
-  
-  const handleCompleteTask = (taskId) => {
-    setTasks( tasks.map((task) => task.id === taskId ? { ...task, completed: !task.completed } : task))
-  }
-  
-  const handleDeleteTask = (taskId) => { 
-    setTasks(tasks.filter((task) => task.id !== taskId))
-  }
-  
+
   const handleFilterChange = (filterValue) => {
     setFilter(filterValue)
   }
@@ -126,15 +114,11 @@ const TodoList = () => {
 
         <Table.Body>
           <div className='tasks'>
-            {filteredTasks.filter((task) => task.title.toLowerCase().includes(searchValue.toLowerCase())).map((task) => (
               <Task
-                key={task.id}
-                task={task}
-                onEdit={handleEditTask}
-                onComplete={handleCompleteTask}
-                onDelete={handleDeleteTask}
+                taskData={filteredTasks.filter((task) => task.title.toLowerCase().includes(searchValue.toLowerCase()))}
+                tasks={tasks}
+                setTasks={setTasks}
               />
-            ))}
           </div>
         </Table.Body>
       </Table>
