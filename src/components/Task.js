@@ -11,10 +11,10 @@ const Task = ({ taskData, tasks, setTasks }) => {
     return result
   }
 
-  const [state, setState] = useState({ items: [] })
+  const [taskState, setTaskState] = useState({ items: [] })
 
   useEffect(() => {
-    setState({
+    setTaskState({
       items: taskData.map((x) => {
         return {
           id: x.id + "",
@@ -33,12 +33,12 @@ const Task = ({ taskData, tasks, setTasks }) => {
     }
 
     const items = reorder(
-      state.items,
+      taskState.items,
       result.source.index,
       result.destination.index
     )
 
-    setState({
+    setTaskState({
       items,
     })
   }
@@ -150,7 +150,7 @@ const Task = ({ taskData, tasks, setTasks }) => {
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
                 <Table.Body>
-                  {state.items.map((item, index) => (
+                  {taskState.items.map((item, index) => (
                     <DragItem item={item} index={index}></DragItem>
                   ))}
                   {provided.placeholder}
