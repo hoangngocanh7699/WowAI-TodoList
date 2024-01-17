@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Item } from "semantic-ui-react";
+import { Table, Input } from "semantic-ui-react";
 import Filter from './Filter';
 import Task from './Task';
 import FormTodo from './Form';

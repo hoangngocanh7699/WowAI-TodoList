@@ -9,11 +9,11 @@ const Filter = ({ value, onChange }) => {
     <div>
       <label>
         <select value={value} onChange={handleFilterChange}>
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="pending">Pending</option>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
         </select>
-        </label>
+      </label>
     </div>
   )
 }
